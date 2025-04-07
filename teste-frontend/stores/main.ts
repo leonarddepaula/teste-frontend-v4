@@ -1,17 +1,24 @@
 // stores/useStore.ts
-export const useStore = defineStore('main', () => {
-  const phrases = ref<string[]>([])
+//recisará criar esta interface/types
 
-  const addPhrase = (newPhrase: string) => {
-    if (newPhrase.trim()) {
-      phrases.value.push(newPhrase)
+import type { Alert } from "~/types/types/alert"
+
+export const useStore = defineStore('main', () => {
+  const alerts = ref<Alert[]>([])
+
+  const addAlert = (newAlert: Omit<Alert, 'timestamp'>) => {
+    if (newAlert.equipmentId.trim() && newAlert.description.trim() && newAlert.severity) {
+      alerts.value.push({
+        ...newAlert,
+        timestamp: Date.now()
+      })
     }
   }
 
-  return { phrases, addPhrase }
+  return { alerts, addAlert }
 }, {
   persist: {
     storage: typeof window !== 'undefined' ? localStorage : undefined,
-    key: 'phrases-local',
+    key: 'alerts-local',
   }
 })

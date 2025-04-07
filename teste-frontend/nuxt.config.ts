@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxtjs/leaflet",
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
+    "@nuxt/image",
   ],
   css: ["~/assets/css/tailwind.css"],
   pinia: {

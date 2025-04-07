@@ -10,9 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/image": "^1.10.0",
     "@nuxt/ui": "^3.0.2",
     "@nuxtjs/leaflet": "^1.2.6",
     "@pinia/nuxt": "^0.10.1",
+    "lucide-vue-next": "^0.487.0",
     "nuxt": "^3.16.2",
     "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.2.0",
